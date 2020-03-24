@@ -13,7 +13,7 @@
         <h4>Learn Teach Earn</h4>
     </div>
 
-    <nav>        
+    <nav>     
     
         <ul>
             <li><a  href="homepage.php"><img align="center" src="image/home.png"></a></li>
@@ -30,5 +30,8 @@
         </ul>
     
     </nav>
+
+    
+
 </body>
 </html>

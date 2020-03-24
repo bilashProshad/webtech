@@ -11,10 +11,10 @@
         <h1>Online Tutor Finder</h1>
         <h4>Learn Teach Earn</h4>
     </div>
-    
+
     <nav>        
         <ul class="r">
-            <li><a href="login.php">Login</a></li>
+            <li><a class="active" href="login.php">Login</a></li>
             <li><a href="registration.php">Registration</a></li>
         </ul>
     
