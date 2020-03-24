@@ -14,6 +14,10 @@
             <li><a class="active" href="">News Feed</a></li>
             <li><a href="">Search</a></li>
             <li><a href="">Post</a></li>
+            
+        </ul>
+
+        <ul class="r">
             <li><a href="">Notification</a></li>
             <li><a href="">Profile</a></li>
             <li><a href="">Logout</a></li>
