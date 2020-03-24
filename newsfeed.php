@@ -10,16 +10,16 @@
     <nav>        
     
         <ul>
-            <li><a  href=""><img align="center" src="image/home.png"></a></li>
-            <li><a class="active" href="">News Feed</a></li>
-            <li><a href="">Search</a></li>
-            <li><a href="">Post</a></li>
+            <li><a  href="homepage.php"><img align="center" src="image/home.png"></a></li>
+            <li><a class="active" href="newsfeed.php">News Feed</a></li>
+            <li><a href="search.php">Search</a></li>
+            <li><a href="post.php">Post</a></li>
             
         </ul>
 
         <ul class="r">
-            <li><a href="">Notification</a></li>
-            <li><a href="">Profile</a></li>
+            <li><a href="notification.php">Notification</a></li>
+            <li><a href="profile.php">Profile</a></li>
             <li><a href="">Logout</a></li>
         </ul>
     
