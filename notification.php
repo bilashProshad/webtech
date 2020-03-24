@@ -7,6 +7,11 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+    <div class="header">
+        <h1>Online Tutor Finder</h1>
+        <h4>Learn Teach Earn</h4>
+    </div>
+
     <nav>        
     
         <ul>

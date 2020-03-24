@@ -9,7 +9,7 @@ body{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 nav{
-    background: #0082e6;
+    background: #454b50;
     height: 50px;
     width: 100%;
 }
@@ -37,6 +37,12 @@ nav ul li a{
     text-transform: uppercase;
 }
 a.active,a:hover{
-    background: #1b9bff;
+    background: #526677;
     transition: .5s;
+}
+
+.header{
+    text-align: center;
+    color: #454b50;
+    margin: 10px;
 }

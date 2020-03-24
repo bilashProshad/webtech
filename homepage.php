@@ -7,20 +7,15 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-    <nav>        
+    <div class="header">
+        <h1>Online Tutor Finder</h1>
+        <h4>Learn Teach Earn</h4>
+    </div>
     
-        <ul>
-            <li><a class="active" href="homepage.php"><img align="center" src="image/home.png"></a></li>
-            <li><a  href="newsfeed.php">News Feed</a></li>
-            <li><a href="search.php">Search</a></li>
-            <li><a href="post.php">Post</a></li>
-            
-        </ul>
-
+    <nav>        
         <ul class="r">
-            <li><a href="notification.php">Notification</a></li>
-            <li><a href="profile.php">Profile</a></li>
-            <li><a href="">Logout</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Registration</a></li>
         </ul>
     
     </nav>
