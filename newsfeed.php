@@ -7,17 +7,15 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-    <nav>
-        <label class="logo">
-            HotelBooking.com
-        </label>
+    <nav>        
     
         <ul>
+            <li><a  href=""><img align="center" src="image/home.png"></a></li>
             <li><a class="active" href="">News Feed</a></li>
             <li><a href="">Search</a></li>
             <li><a href="">Post</a></li>
             <li><a href="">Notification</a></li>
-            <li><a href="">User</a></li>
+            <li><a href="">Profile</a></li>
             <li><a href="">Logout</a></li>
         </ul>
     
