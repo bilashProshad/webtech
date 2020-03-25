@@ -29,5 +29,7 @@
         </ul>
     
     </nav>
+	
+	<p> This is profile </p>
 </body>
 </html>
