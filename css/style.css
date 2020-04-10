@@ -48,3 +48,45 @@ body{
     color: #454b50;
     margin: 10px;
 }
+
+form {
+    margin: 0 auto;
+    width: auto;
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -200px;
+    background-color: #454b50;
+   
+}
+
+label{
+    color: white;
+}
+
+input[type=text], input[type=password], input[type=number]{
+    width: 300px;
+    border: 2px solid #aaa;
+    border-radius: 4px;
+    margin: 8px 0;
+    outline: none;
+    padding:8px;
+}
+
+form table tr td a{
+    color: white;
+    text-decoration: underline;
+}
+
+button {
+    background-color: #aaa;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;    
+  }
