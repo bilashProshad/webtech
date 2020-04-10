@@ -47,6 +47,31 @@
                 <th><input type="password" name="txtConPassword" id="" placeholder="Confirm Password"></th>
             </tr>
             <tr>
+                <td>
+                    <label for="">Register as &nbsp;</label>
+                    <input type="radio" name="userType" id="" value="student">
+                    <label for="">Student</label>
+                    <input type="radio" name="userType" id="" value="teacher">
+                    <label for="">Teacher</label>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <hr>
+                </th>
+            </tr>
+            <tr>
+                <td align="right">
+                    <label for="">I am a &nbsp;</label>
+                    <input type="radio" name="gender" id="" value="male">
+                    <label for="">Male</label>
+                    <input type="radio" name="gender" id="" value="female">
+                    <label for="">Female</label>
+                    <input type="radio" name="gender" id="" value="other">
+                    <label for="">Other</label>
+                </td>
+            </tr>
+            <tr>
                 <th align="center"><button type="submit">Register</button></th>
             </tr>
             <tr>
