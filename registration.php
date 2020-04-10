@@ -24,11 +24,11 @@
     
     </nav>
 
-    <form action="" method="post">
+    <form action="" method="post" class="registration-form">
         <table>
             <tr>
                 <th>
-                    <h1><label for="">Registration</label></h1>
+                    <h1 style="margin-bottom: 10px"><label for="">Registration</label></h1>
                 </th>
             </tr>
             <tr>

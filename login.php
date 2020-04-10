@@ -25,11 +25,11 @@
     
     </nav>
 
-    <form action="" method="post">
+    <form action="" method="post" class="login-form">
         <table>
             <tr>
                 <th>
-                    <h1><label for="">Login</label></h1>
+                    <h1 style="margin-bottom: 10px"><label for="">Login</label></h1>
                 </th>
             </tr>
             <tr>
@@ -42,7 +42,7 @@
                 <th align="right"><button type="submit">Login</button></th>
             </tr>
         </table>
-        <table>
+        <table style="margin-top: 20px">
             <tr>
                 <td>
                     <label for="">Forgot your passoword?</label> <a href="#">Click Here</a>

@@ -49,7 +49,7 @@ body{
     margin: 10px;
 }
 
-form {
+.login-form, .registration-form{
     margin: 0 auto;
     width: auto;
     padding: 1em;
@@ -83,15 +83,62 @@ form table tr td a{
 }
 
 button {
-    background-color: #aaa;
+    background-color:#717980;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
     cursor: pointer;    
-  }
+}
 
-  button:hover{
+ button:hover{
     background: #526677;
     transition: .2s;
+}
+
+.index-register-btn{
+    background-color: #bba897;
+    opacity: 0.5;
+    color: black;
+    padding: 8px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer; 
+}
+
+.index-login-btn{
+    color: white;
+    text-decoration: underline;
+}
+
+.index-form{
+    padding: 20px;
+    margin: 20px;    
+    border: 1px solid #CCC;
+    border-radius: 1em;
+    background-color: #e68129;
+    color: white;
+}
+
+.index-form-contract{
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 20px;  
+    margin-left: 20px;
+    margin-bottom: 60px;   
+    border: 1px solid #CCC;
+    border-radius: 1em;
+    background-color: #a1b1c7;
+    color: #526677;
+}
+
+.index-form-about{
+    padding: 5px;  
+    margin-left: 20px;
+    margin-top: 60px;   
+    border: 1px solid #CCC;
+    border-radius: 1em;
+    background-color: #3e4147;
+    color: white;
 }
