@@ -90,3 +90,8 @@ button {
     border: none;
     cursor: pointer;    
   }
+
+  button:hover{
+    background: #526677;
+    transition: .2s;
+}
