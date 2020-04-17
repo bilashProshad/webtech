@@ -25,7 +25,7 @@
     
     </nav>
 
-    <form action="" method="post" class="login-form">
+    <form action="#" onsubmit="return validation()" class="login-form">
         <table>
             <tr>
                 <th>
@@ -33,10 +33,16 @@
                 </th>
             </tr>
             <tr>
-                <th><input type="text" name="txtEmail" id="" placeholder="Email"></th>
+                <th>
+                    <input type="text" name="txtEmail" id="txtEmail" placeholder="Email"><br>
+                    <span id="userMail"></span>            
+                </th>
             </tr>
             <tr>
-                <th><input type="password" name="txtPassword" id="" placeholder="Password"></th>
+                <th>
+                    <input type="password" name="txtPassword" id="txtPassword" placeholder="Password"><br>
+                    <span id="userPass"></span>
+                </th>
             </tr>
             <tr>
                 <th align="right"><button type="submit">Login</button></th>
@@ -56,6 +62,6 @@
         </table>
     </form>
 
-
+    <script type="text/javascript" src="js/login.js"> </script>
 </body>
 </html>
