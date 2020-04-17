@@ -50,7 +50,7 @@
             </tr>
             <tr>
                 <td>
-                    <label for="">Don't have an account?</label> <a href="#">Click Here</a>
+                    <label for="">Don't have an account?</label> <a href="registration.php">Click Here</a>
                 </td>
             </tr>
         </table>

@@ -24,7 +24,7 @@
     
     </nav>
 
-    <form action="" method="post" class="registration-form">
+    <form action="#" onsubmit="return validation()" class="registration-form">
         <table>
             <tr>
                 <th>
@@ -32,19 +32,34 @@
                 </th>
             </tr>
             <tr>
-                <th><input type="text" name="txtName" id="" placeholder="Full Name"></th>
+                <th>
+                    <input type="text" name="txtName" id="txtName" placeholder="Full Name" autocomplete="off"> <br>
+                    <span id="fullName"></span>
+                </th>
             </tr>
             <tr>
-                <th><input type="text" name="txtEmail" id="" placeholder="Email"></th>
+                <th>
+                    <input type="text" name="txtEmail" id="txtEmail" placeholder="Email" autocomplete="off"><br>
+                    <span id="userMail"></span>            
+                </th>
             </tr>
             <tr>
-                <th><input type="number" name="txtPhoneNo" id="" placeholder="Phone Number"></th>
+                <th>
+                    <input type="text" name="txtPhoneNo" id="txtPhoneNo" placeholder="Phone Number" autocomplete="off"><br>
+                    <span id="userPhone"></span>
+                </th>
             </tr>
             <tr>
-                <th><input type="password" name="txtPassword" id="" placeholder="Password"></th>
+                <th>
+                    <input type="password" name="txtPassword" id="txtPassword" placeholder="Password" autocomplete="off"><br>
+                    <span id="userPass"></span>
+                </th>
             </tr>
             <tr>
-                <th><input type="password" name="txtConPassword" id="" placeholder="Confirm Password"></th>
+                <th>
+                    <input type="password" name="txtConPassword" id="txtConPassword" placeholder="Confirm Password " autocomplete="off"><br>
+                    <span id="conPass"></span>
+                </th>
             </tr>
             <tr>
                 <td>
@@ -52,7 +67,8 @@
                     <input type="radio" name="userType" id="" value="student">
                     <label for="">Student</label>
                     <input type="radio" name="userType" id="" value="teacher">
-                    <label for="">Teacher</label>
+                    <label for="">Teacher</label> <br>
+                    <span id="checkUserType"></span>
                 </td>
             </tr>
             <tr>
@@ -68,7 +84,8 @@
                     <input type="radio" name="gender" id="" value="female">
                     <label for="">Female</label>
                     <input type="radio" name="gender" id="" value="other">
-                    <label for="">Other</label>
+                    <label for="">Other</label> <br>
+                    <span id="checkGender"></span>
                 </td>
             </tr>
             <tr>
@@ -84,11 +101,13 @@
         <table style="margin-top: 20px">
             <tr>
                 <td>
-                    <label for="">Already have an account?</label> <a href="#">Click Here</a>
+                    <label for="">Already have an account?</label> <a href="login.php">Click Here</a>
                 </td>
             </tr>
         </table>
     </form>
+
+    <script type="text/javascript" src="js/registration.js"> </script>
 
 </body>
 </html>
