@@ -25,7 +25,7 @@
     
     </nav>
 
-    <form action="#" onsubmit="return validation()" class="login-form">
+    <form action="#" onsubmit="return validation()" method="POST" class="login-form">
         <table>
             <tr>
                 <th>

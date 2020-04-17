@@ -24,7 +24,7 @@
     
     </nav>
 
-    <form action="#" onsubmit="return validation()" class="registration-form">
+    <form action="#" onsubmit="return validation()" method="POST" class="registration-form">
         <table>
             <tr>
                 <th>
