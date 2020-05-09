@@ -33,7 +33,7 @@
 	     <table>
             <tr>
                 <th>
-                    <h1 style="margin-bottom: 25px"><label for="">Post For Tution</label></h1>
+                    <h1 style="margin-bottom: 25px" align="center"><label for="">Update Tution information here</label></h1>
                 </th>
             </tr>
 			</table>
@@ -99,9 +99,30 @@
 						  
 						    </select>
  
-						<?php echo"&nbsp";?>
-						   <label for="">Location:</label>
+						<?php echo"&nbsp"."To"."&nbsp";?>
 						  <select>
+						<label for=""><option value="Two">Two</option></label>
+						  <label for=""><option value="Three">Three</option></label>
+						  <label for=""><option value="Four">Four</option></label> 
+						  <label for=""><option value="Five">Five</option></label> 
+						  <label for=""><option value="six">six</option></label> 
+						  <label for=""><option value="Seven">Seven</option></label> 
+						  <label for=""><option value="Eight">Eight</option> </label>
+						 <label for=""> <option value="Nine">Nine</option> </label>
+						  <label for=""><option value="Ten">Ten</option> </label>
+						 <label for=""> <option value="Eleven">Eleven</option></label>
+						 <label for=""> <option value="Twelve">Twelve</option></label>	
+							
+						  </select>
+						  </td>
+				</tr>
+				</table>
+				</br>
+<table>
+				
+				<tr>
+				<td><label for="">Preferred Location:</label>
+					<select>
 						 <label for=""> <option value="Badda">Badda</option></label>
 						 <label for=""> <option value="Nikunjo">Nikunjo</option></label>
 						 <label for=""> <option value="Basabo">Basabo</option></label>
@@ -111,11 +132,15 @@
 						<label for=""> <option value="khilkhet">khilkhet</option></label>	
 							
 						  </select>
-						  </td>
+							  
+							 
+				</select>
+				</td>
+				
 				</tr>
 				</table>
 				</br>
-			<table>
+					<table>
 			
 				<tr>
 				<td>
@@ -140,49 +165,13 @@
 				</td>
 				</tr>
 				</table>
-				</br>
-				<table>
-				
-				<tr>
-				<td><label for="">Preferred Institution:</label>
-				<select>
-							<label for=""><option value="Buet">Buet</option></label>
-					         <label for=""> <option value="Aiub">Aiub</option></label>
-							  <label for=""><option value="NSU">NSU</option></label>
-							 <label for=""> <option value="IUB">IUB</option></label>
-							  <label for=""><option value="DU">DU</option></label>
-							  <label for=""><option value="Any">Any</option></label>
-							  
-							 
-				</select>
-				</td>
-				
-				</tr>
-				</table>
-				</br>
-				<table>
-				<tr>
-				<td>
-				<label for="">Preferable Time : </label>
-				<input type="time" id="Preferable Time "name="Preferable Time">
-				</td>
-				</tr>
-				</table>
-				</br>
-				<table>
-				<tr>
-				<td>
-				<label for="">Deadline : </label>
-				<input type="date" id="Deadline "name="Deadline">
-				</td>
-				</tr>
-			</table>
 			</br>
 			<table>
             <tr>
-                <th ><button type="submit" style="transform:translate(500%,-60%)" name="Post" >Post</button></th>
+                <th ><button type="submit" style="transform:translate(600%,-30%)" name="Update" >Update</button></th>
             </tr>
         </table>
+		
 
 		</form>
 	

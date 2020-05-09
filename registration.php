@@ -24,13 +24,25 @@
     
     </nav>
 
-    <form action="#" onsubmit="return validation()" method="POST" class="registration-form">
+    <form action="#" onsubmit="return validation()" method="POST" class="All-form">
         <table>
             <tr>
                 <th>
-                    <h1 style="margin-bottom: 10px"><label for="">Registration</label></h1>
+                    <h1 style="margin-bottom: 10px "align="center "><label for="">Registration</label></h1>
                 </th>
             </tr>
+			</table>
+			<table>
+			<tr>
+			<div class ="form-group ">
+			
+					<img src="placeholder.png" align="center" height="250px" width="20px" onclick="triggerClick()" id="ProfileDisplay"> 
+                    <input type="file" name="ProfileImage" onchange="displayImage(this)" id="ProfileImage" style="display:none;" ><br>
+                    <span id="ProfileImage"></span></br> 
+                   <label for="profileImage"> choose Profile Image </label>					
+            
+			</div>
+			</tr>
             <tr>
                 <th>
                     <input type="text" name="txtName" id="txtName" placeholder="Full Name" autocomplete="off"> <br>
@@ -106,7 +118,7 @@
             </tr>
         </table>
     </form>
-
+	<script src="script.js"> </script>
     <script type="text/javascript" src="js/registration.js"> </script>
 
 </body>

@@ -16,21 +16,21 @@
     <nav>        
     
         <ul>
-            <li><a  href="newsfeed.php"><img align="center" src="image/home.png"></a></li>
-            <li><a href="newsfeed.php">News Feed</a></li>
-            <li><a href="search.php">Search</a></li>
-            <li><a href="post.php">Post</a></li>
+		<li><a  href="Dashboard.php"><img align="center" src="image/home.png"></a></li>
+            <li><a class="active" href="Dashboard.php">Dashboard</a></li>
+            <li><a href="UpdateSystemInfo.php">Update Information</a></li>
+            
             
         </ul>
 
         <ul class="r">
-            <li><a href="notification.php">Notification</a></li>
+            <li><a href="AdminNotification.php">Notification</a></li>
             <li><a class="active" href="profile.php">Profile</a></li>
             <li><a href="index.php">Logout</a></li>
         </ul>
     
     </nav>
-	<form name="search_form_results"  action="UpdateProfileInfo.php" method="POST" class="Timeline-form">
+	<form name="search_form_results"  action="AdminProfileUpdate.php" method="POST" class="Timeline-form">
 	<table>
 	<tr>
                 <th>
@@ -49,17 +49,10 @@
             </tr>
 			  </tr>
 			  </table>
-			  <table>
-			
-            <tr>
-                <th align="center"><button type="submit" name="Update Tution Information"onclick="TutionUpdate();">Update Tution Information</button></th>
-			
-			</tr>
-			  </tr>
-			  </table>
+	
 			<table>
             <tr>
-                <th align="center"><button type="submit" name="Account Settings"onclick="AccountSettings();">Account Settings</button></th>
+                <th align="center"><button type="submit" name="Admin Account Settings"onclick="AdminAccountSettings();">Account Settings</button></th>
             </tr
 			
 			</table>

@@ -29,6 +29,16 @@
         </ul>
     
     </nav>
-
+	
+</body>
+<form  action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST" class="All-form">
+	     <table>
+		 <tr>
+                <th>
+                    <h1 style="margin-bottom: 10px"><label for=""> Here is the Search Reasult!</label></h1>
+					</br>
+                </th>
+				</tr>
+</table>
 </body>
 </html>

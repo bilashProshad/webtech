@@ -101,7 +101,7 @@
                     <tr>
                         <td align="center">
                             <form action="" class="index-form-about">
-                                <a style="color: #aaa; font-size:20px" href="">About Us!</a>
+                                <a style="color: #aaa; font-size:20px" href="Terms&Condition.php">About Us!</a>
                             </form>
                         </td>
                     </tr>

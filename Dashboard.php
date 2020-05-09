@@ -16,25 +16,30 @@
     <nav>     
     
         <ul>
-            <li><a  href="newsfeed.php"><img align="center" src="image/home.png"></a></li>
-            <li><a class="active" href="newsfeed.php">News Feed</a></li>
-            <li><a href="search.php">Search</a></li>
-            <li><a href="post.php">Post</a></li>
+            <li><a  href="Dashboard.php"><img align="center" src="image/home.png"></a></li>
+            <li><a class="active" href="Dashboard.php">Dashboard</a></li>
+             <li><a href="RegistrationReview.php">Registration Review</a></li>
+            <li><a href="UpdateSystemInfo.php">Update Information</a></li>
             
         </ul>
 
         <ul class="r">
-            <li><a href="notification.php">Notification</a></li>
-            <li><a href="profile.php">Profile</a></li>
+            <li><a href="AdminNotification.php">Notification</a></li>
+           <li><a href="AdminProfile.php">Admin</a></li>
             <li><a href="index.php">Logout</a></li>
         </ul>
     
     </nav>
 	<form  action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST" class="All-form">
 	     <table>
+		 <tr>
+                <th>
+                    <h1 style="margin-bottom: 30px "><label for="">Admin Dashboard</label></h1>
+                </th>
+            </tr>
             <tr>
                 <th
-                    align="left" style="margin: 10px;font-size:150%"><label for="">Student</label>
+                    align="left" style="margin: 5px;font-size:130%"><label for="">Student</label>
 					
                 </th>
             </tr>
@@ -79,9 +84,10 @@
 			</table>
 			</br>
 			<table>
-	
 			 <tr>
-                <th align="left"><button type="submit" name="Apply Now" >Apply Now</button></th>
+                <td><th align="right" ><button type="submit" name="Details" >Details</button></th></td>
+               <td> <th align="right"><button type="submit" name="Hide" >Hide</button></th></td>
+                <td><th align="right"><button type="submit" name="Delete" >Delete</button></th></td>
             </tr>
 			
 			</table>

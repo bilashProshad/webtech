@@ -15,16 +15,16 @@
     <nav>        
     
         <ul>
-            <li><a href="newsfeed.php"><img align="center" src="image/home.png"></a></li>
-            <li><a href="newsfeed.php">News Feed</a></li>
-            <li><a href="search.php">Search</a></li>
-            <li><a href="post.php">Post</a></li>
+            <li><a  href="Dashboard.php"><img align="center" src="image/home.png"></a></li>
+            <li><a class="active" href="Dashboard.php">Dashboard</a></li>
+             <li><a href="RegistrationReview.php">Registration Review</a></li>
+            <li><a href="UpdateSystemInfo.php">Update Information</a></li>
             
         </ul>
 
         <ul class="r">
-            <li><a class="active" href="notification.php">Notification</a></li>
-            <li><a href="profile.php">Profile</a></li>
+            <li><a href="AdminNotification.php">Notification</a></li>
+           <li><a href="AdminProfile.php">Admin</a></li>
             <li><a href="index.php">Logout</a></li>
         </ul>
     
