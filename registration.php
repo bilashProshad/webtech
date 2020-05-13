@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +28,7 @@
     
     </nav>
 
-    <form action="#" onsubmit="return validation()" method="POST" class="registration-form">
+    <form action="control/register.php" onsubmit="return validation()" method="POST" class="registration-form">
         <table>
             <tr>
                 <th>
@@ -89,8 +93,22 @@
                 </td>
             </tr>
             <tr>
-                <th align="center"><button type="submit">Register</button></th>
+                <th align="center"><button type="submit" name="done">Register</button></th>
             </tr>
+            
+            <tr>
+                <th align="center">
+                <span>
+                    <?php
+                        if(isset($_SESSION['msg'])){
+                            echo $_SESSION['msg'];
+                            session_destroy();
+                        }
+                    ?>
+                </span>
+                </th>
+            </tr>
+
             <tr>
                 <td align="center">
                     <label for="">By clicking register you agree </label> <br>
