@@ -32,8 +32,11 @@
     </nav>
 	
 	<?php
-		$i = 5;
-		while($i>0){
+	include 'control/connection.php';
+		$q = "select * from post";
+		$query = mysqli_query($con,$q);
+
+		while($res = mysqli_fetch_array($query)){
 	?>
 
 	<form  action="#" method="POST" class="newsfeed-form">
@@ -51,45 +54,45 @@
 			<tr>
 			<th align="left"> Subject </th>
 			<th align="left">: &nbsp; &nbsp</th>
-			<th align="left">Math</th>
+			<th align="left"><?php echo $res['subject'] ?></th>
 			</tr>
 			 <tr>
 			<th align="left"> Class 
 					
 				</th>
 				<th align="left">: &nbsp; &nbsp;</th>
-				<th align="left"> Eight </th>
+				<th align="left"> <?php echo $res['class'] ?> </th>
 			</tr>
 			<tr>
 			<th align="left"> Medium 
 				</th>
 				<th align="left">: &nbsp; &nbsp;</th>
-				<th align="left">English</th>
+				<th align="left"><?php echo $res['medium'] ?></th>
 			</tr>
 			<tr>
 			<th align="left"> Salary 
 				
 				</th>
 				<th align="left">: &nbsp; &nbsp;</th>
-				<th align="left">5000tk</th>
+				<th align="left"><?php echo $res['salary'] ?></th>
 			</tr>
 			<tr>
 			<th align="left"> Location 		
 				</th>
 				<th align="left">: &nbsp; &nbsp;</th>
-				<th align="left">Dhaka</th>
+				<th align="left"><?php echo $res['location'] ?></th>
 			</tr>
 			<tr>
 			<th align="left"> Preferred Institution &nbsp;			
 				</th>
 				<th align="left">: &nbsp; &nbsp;</th>
-				<th align="left">BUET</th>
+				<th align="left"><?php echo $res['institution'] ?></th>
 			</tr>
 				<tr>
 			<th align="left"> Deadline 			
 				</th>
 				<th align="left">: &nbsp; &nbsp;</th>
-				<th align="left">12/12/12</th>
+				<th align="left"><?php echo $res['deadline'] ?></th>
 			</tr>
 			</table>
 			</br>
@@ -104,7 +107,6 @@
 		
 
 	<?php
-		$i--;
 		}
 	?>
 
