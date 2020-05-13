@@ -51,7 +51,7 @@ body{
     margin: 10px;
 }
 
-.login-form, .Timeline-form{
+.login-form, .Timeline-form, .registration-form{
     margin: 0 auto;
     width: auto;
     padding: 1em;
