@@ -26,7 +26,7 @@
         <ul class="r">
             <li><a href="notification.php">Notification</a></li>
             <li><a class="active" href="profile.php">Profile</a></li>
-            <li><a href="index.php">Logout</a></li>
+            <li><a href="logout.php">Logout</a></li>
         </ul>
     
     </nav>

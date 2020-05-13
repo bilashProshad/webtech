@@ -20,21 +20,30 @@ if(isset($_POST['done'])){
         $pending = 1;
     }
    
-    $q = "INSERT INTO `user`(`name`, `email`, `contact`, `password`, `usertype`, `gender`, `status`, `pending`, `image`) VALUES ('$txtName','$txtEmail','$txtPhoneNo','$txtPassword','$userType','$gender', $status, $pending, null)";
+    $q = "SELECT * FROM `login` WHERE `email`='$txtEmail'";
     $query = mysqli_query($con,$q);
-    if($query){
-        $last_id = mysqli_insert_id($con);
+
+    if ($query->num_rows > 0) {   
+        $_SESSION['msg'] = "This email is already used";
     }
     else{
-        echo "failed";
+        $q = "INSERT INTO `user`(`name`, `email`, `contact`, `password`, `usertype`, `gender`, `status`, `pending`, `image`) VALUES ('$txtName','$txtEmail','$txtPhoneNo','$txtPassword','$userType','$gender', $status, $pending, null)";
+        $query = mysqli_query($con,$q);
+        if($query){
+            $last_id = mysqli_insert_id($con);
+        }
+        else{
+            echo "failed";
+        }
+
+        $q = "INSERT INTO `login`(`email`, `password`, `userfk`) VALUES ('$txtEmail','$txtPassword',$last_id)";
+        $query = mysqli_query($con,$q);
+
+        $_SESSION['msg'] = "Registration Successful";
     }
-
-    $q = "INSERT INTO `login`(`email`, `password`, `userfk`) VALUES ('$txtEmail','$txtPassword',$last_id)";
-    $query = mysqli_query($con,$q);
-
-    $_SESSION['msg'] = "Registration Successful";
+    
 
     $con->close();
-    header('location:http://localhost/webtech/registration.php');
+    header('Location: ../registration.php');
 }
 ?>

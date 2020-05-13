@@ -1,3 +1,10 @@
+<?php
+include 'control/loginCheck.php';
+if(isset($_SESSION['email'])){
+    header("location: newsfeed.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,7 +52,18 @@
                 </th>
             </tr>
             <tr>
-                <th align="right"><button type="submit">Login</button></th>
+                <th align="right"><button type="submit" name="submit">Login</button></th>
+            </tr>
+            <tr>
+                <th align="center">
+                    <span >
+                        <?php
+                            if(isset($error)){
+                                echo $error;
+                            }
+                        ?>
+                    </span>
+                </th>
             </tr>
         </table>
         <table style="margin-top: 20px">
@@ -61,7 +79,7 @@
             </tr>
         </table>
     </form>
-
+    
     <script type="text/javascript" src="js/login.js"> </script>
 </body>
 </html>

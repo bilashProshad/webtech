@@ -26,11 +26,17 @@
         <ul class="r">
             <li><a href="notification.php">Notification</a></li>
             <li><a href="profile.php">Profile</a></li>
-            <li><a href="index.php">Logout</a></li>
+            <li><a href="logout.php">Logout</a></li>
         </ul>
     
     </nav>
-	<form  action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST" class="All-form">
+	
+	<?php
+		$i = 5;
+		while($i>0){
+	?>
+
+	<form  action="#" method="POST" class="newsfeed-form">
 	     <table>
             <tr>
                 <th
@@ -43,38 +49,47 @@
 			</br>
 			<table>
 			<tr>
-			<th align="left"> Subject :
-			
-				</th>
+			<th align="left"> Subject </th>
+			<th align="left">: &nbsp; &nbsp</th>
+			<th align="left">Math</th>
 			</tr>
 			 <tr>
-			<th align="left"> Class  &nbsp &nbsp :
+			<th align="left"> Class 
 					
-                </th>
-			</tr>
-			<tr>
-			<th align="left"> Medium :
 				</th>
+				<th align="left">: &nbsp; &nbsp;</th>
+				<th align="left"> Eight </th>
 			</tr>
 			<tr>
-			<th align="left"> Salary  &nbsp :
+			<th align="left"> Medium 
+				</th>
+				<th align="left">: &nbsp; &nbsp;</th>
+				<th align="left">English</th>
+			</tr>
+			<tr>
+			<th align="left"> Salary 
 				
-                </th>
+				</th>
+				<th align="left">: &nbsp; &nbsp;</th>
+				<th align="left">5000tk</th>
 			</tr>
 			<tr>
-			<th align="left"> Location :
-			
+			<th align="left"> Location 		
 				</th>
+				<th align="left">: &nbsp; &nbsp;</th>
+				<th align="left">Dhaka</th>
 			</tr>
 			<tr>
-			<th align="left"> Preferred Institution :
-			
+			<th align="left"> Preferred Institution &nbsp;			
 				</th>
+				<th align="left">: &nbsp; &nbsp;</th>
+				<th align="left">BUET</th>
 			</tr>
 				<tr>
-			<th align="left"> Deadline :
-			
+			<th align="left"> Deadline 			
 				</th>
+				<th align="left">: &nbsp; &nbsp;</th>
+				<th align="left">12/12/12</th>
 			</tr>
 			</table>
 			</br>
@@ -85,9 +100,13 @@
             </tr>
 			
 			</table>
-			</form>
+	</form>
+		
 
-    
+	<?php
+		$i--;
+		}
+	?>
 
 </body>
 </html>

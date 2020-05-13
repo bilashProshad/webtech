@@ -15,17 +15,17 @@
     <nav>        
     
         <ul>
-            <li><a  href="newsfeed.php"><img align="center" src="image/home.png"></a></li>
+            <li><a href="newsfeed.php"><img align="center" src="image/home.png"></a></li>
             <li><a href="newsfeed.php">News Feed</a></li>
-            <li><a class="active"  href="search.php">Search</a></li>
-            <li><a href="post.php">Post</a></li>
+            <li><a href="search.php">Search</a></li>
+            <li><a class="active" href="post.php">Post</a></li>
             
         </ul>
 
         <ul class="r">
             <li><a href="notification.php">Notification</a></li>
             <li><a href="profile.php">Profile</a></li>
-            <li><a href="index.php">Logout</a></li>
+            <li><a href="logout.php">Logout</a></li>
         </ul>
     
     </nav>
