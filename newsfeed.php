@@ -99,7 +99,7 @@
 			<table>
 	
 			 <tr>
-                <th align="left"><button type="submit" name="Apply Now" >Apply Now</button></th>
+                <th align="left"><button > <a style="color:white;" href="delete.php?id=<?php echo $res['id']; ?>" > Apply Now </a> </button></th>
             </tr>
 			
 			</table>

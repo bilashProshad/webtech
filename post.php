@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +32,7 @@
         </ul>
     
     </nav>
-	<form  action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST" class="All-form">
+	<form  action="control/postData.php" method="POST" class="newsfeed-form">
 	     <table>
             <tr>
                 <th>
@@ -43,9 +46,9 @@
 						<td>
 						<label for="">Medium :</label>
 						
-					 <label for=""> <input type="checkbox" name="Bangla" value="Bangla"> Bangla </input></label>
-					 <label for=""> <input type="checkbox" name="English" value="English"> English </input></label>
-					 <label for=""> <input type="checkbox" name="Others" value="Others"> Others </input></label>
+					 <label for=""> <input type="checkbox" name="medium[]" value="Bangla"> Bangla </input></label>
+					 <label for=""> <input type="checkbox" name="medium[]" value="English"> English </input></label>
+					 <label for=""> <input type="checkbox" name="medium[]" value="Others"> Others </input></label>
 					  
 					  
 					  </td>
@@ -58,22 +61,22 @@
 				<td>
 					<label for="">Preferred Subject :</label></br></br>
 					
-					<label for="">  <input type="checkbox" name="Bangla" value="Bangla"> Bangla </input></label>
-					<label for="">  <input type="checkbox" name="English" value="English"> English </input></label>
-					<label for="">  <input type="checkbox" name="Math" value="Math"> Math </input></label> 
-					 <label for=""> <input type="checkbox" name="Physic" value="Physic"> Physic </input></label>
-					 <label for=""> <input type="checkbox" name="ICT" value="ICT"> ICT </input></label>
-					 <label for=""> <input type="checkbox" name="Chemistry" value="Chemistry"> Chemistry </input></label>
-					 <label for=""> <input type="checkbox" name="Biology" value="Biology"> Biology </input></label>
-					 <label for=""> <input type="checkbox" name="Religion" value="Religion"> Religion </input></label>
-					 <label for=""> <input type="checkbox" name="General Science" value="General Science"> General Science </input></label>
+					<label for="">  <input type="checkbox" name="prefSub[]" value="Bangla"> Bangla </input></label>
+					<label for="">  <input type="checkbox" name="prefSub[]" value="English"> English </input></label>
+					<label for="">  <input type="checkbox" name="prefSub[]" value="Math"> Math </input></label> 
+					 <label for=""> <input type="checkbox" name="prefSub[]" value="Physic"> Physic </input></label>
+					 <label for=""> <input type="checkbox" name="prefSub[]" value="ICT"> ICT </input></label>
+					 <label for=""> <input type="checkbox" name="prefSub[]" value="Chemistry"> Chemistry </input></label>
+					 <label for=""> <input type="checkbox" name="prefSub[]" value="Biology"> Biology </input></label>
+					 <label for=""> <input type="checkbox" name="prefSub[]" value="Religion"> Religion </input></label>
+					 <label for=""> <input type="checkbox" name="prefSub[]" value="General Science"> General Science </input></label>
 					 </br></br>
-					 <label for=""> <input type="checkbox" name="Economics" value="Economics"> Economics </input></label>
-					 <label for=""> <input type="checkbox" name="Statistics" value="Statistics"> Statistics </input></label> 
-					 <label for=""> <input type="checkbox" name="Social Science" value="Social Science"> Social Science </input></label>
-					<label for="">  <input type="checkbox" name="Finance" value="Finance"> Finance </input></label>
-					 <label for=""> <input type="checkbox" name="History" value="History"> History </input></label>
-					  <label for=""><input type="checkbox" name="Accounting" value="Accounting"> Accounting </input></label>
+					 <label for=""> <input type="checkbox" name="prefSub[]" value="Economics"> Economics </input></label>
+					 <label for=""> <input type="checkbox" name="prefSub[]" value="Statistics"> Statistics </input></label> 
+					 <label for=""> <input type="checkbox" name="prefSub[]" value="Social Science"> Social Science </input></label>
+					<label for="">  <input type="checkbox" name="prefSub[]" value="Finance"> Finance </input></label>
+					 <label for=""> <input type="checkbox" name="prefSub[]" value="History"> History </input></label>
+					  <label for=""><input type="checkbox" name="prefSub[]" value="Accounting"> Accounting </input></label>
 					  
 					  </td>  
             </tr>
@@ -83,7 +86,7 @@
 			   <tr>
 						<td>
 						<label for="">Class:</label>
-						   <select>
+						   <select name="class">
 						  <label for=""><option value="One">One</option></label>
 						  <label for=""><option value="Two">Two</option></label>
 						  <label for=""><option value="Three">Three</option></label>
@@ -101,7 +104,7 @@
  
 						<?php echo"&nbsp";?>
 						   <label for="">Location:</label>
-						  <select>
+						  <select name = "location">
 						 <label for=""> <option value="Badda">Badda</option></label>
 						 <label for=""> <option value="Nikunjo">Nikunjo</option></label>
 						 <label for=""> <option value="Basabo">Basabo</option></label>
@@ -120,14 +123,14 @@
 				<tr>
 				<td>
 				<label for="">Salary Range : </label> 
-				<select>
-					          <label for=""><option value="one thousand">one thousand</option></label>
-							  <label for=""><option value="two thousand">two thousand</option></label>
+				<select name="salRangeLow">
+					          <label for=""><option value="One thousand">one thousand</option></label>
+							  <label for=""><option value="Two thousand">two thousand</option></label>
 							 <label for=""> <option value="Three thousand">Three thousand</option></label>
 							 
 				</select>
-				<?php echo"&nbsp"."To"."&nbsp";?>
-				<select>
+				<?php echo"&nbsp"."<label> To </label>"."&nbsp";?>
+				<select name="salRangeHigh">
 					         <label for=""> <option value="Two thousand">Two thousand</option></label>
 							 <label for=""> <option value="Three thousand">Three thousand</option></label>
 							 <label for=""> <option value="Four thousand">Four thousand</option></label>
@@ -145,7 +148,7 @@
 				
 				<tr>
 				<td><label for="">Preferred Institution:</label>
-				<select>
+				<select name="prefIns">
 							<label for=""><option value="Buet">Buet</option></label>
 					         <label for=""> <option value="Aiub">Aiub</option></label>
 							  <label for=""><option value="NSU">NSU</option></label>
@@ -164,7 +167,7 @@
 				<tr>
 				<td>
 				<label for="">Preferable Time : </label>
-				<input type="time" id="Preferable Time "name="Preferable Time">
+				<input type="time" id="Preferable Time "name="prefTime">
 				</td>
 				</tr>
 				</table>
@@ -173,15 +176,20 @@
 				<tr>
 				<td>
 				<label for="">Deadline : </label>
-				<input type="date" id="Deadline "name="Deadline">
+				<input type="date" id="Deadline "name="deadLine">
 				</td>
 				</tr>
 			</table>
 			</br>
 			<table>
             <tr>
-                <th ><button type="submit" style="transform:translate(500%,-60%)" name="Post" >Post</button></th>
-            </tr>
+                <th ><button type="submit" style="transform:translate(500%,-60%)" name="submit" >Post</button></th>
+			</tr>
+			<tr>
+				<th>
+					<span> <?php if(isset($_SESSION['result'])) { echo $_SESSION['result']; } unset($_SESSION['result']); ?></span>
+				</th>
+			</tr>
         </table>
 
 		</form>

@@ -18,5 +18,11 @@ if (isset($_POST['submit'])){
     else{
         $error = "Invalid email or password";
     }
+
+    $q = "SELECT `id`FROM `user` WHERE `email` = '$email'";
+    $query = mysqli_query($con,$q);
+    while($res = mysqli_fetch_array($query)){
+        $_SESSION['id'] = $res['id'];
+    }
 }
 ?>
