@@ -76,6 +76,16 @@ body{
     background-color: #454b50;   
 }
 
+.post-form{
+    margin-left: 50px;
+    margin-top: 20px;
+    width: 40%;
+    padding: 1em;
+    border-radius: 1em;
+    border: 1px solid #CCC;
+    background-color: #454b50;   
+}
+
 .All-form{
 	
     margin: 0 auto;

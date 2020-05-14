@@ -32,7 +32,7 @@ session_start();
         </ul>
     
     </nav>
-	<form  action="control/postData.php" method="POST" class="newsfeed-form">
+	<form  action="control/postData.php" method="POST" class="post-form">
 	     <table>
             <tr>
                 <th>
