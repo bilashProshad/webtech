@@ -36,20 +36,13 @@ $id = $_SESSION['id'];
     
     </nav>
     
-    <?php
-	include 'control/connection.php';
-		$q = "SELECT * FROM `user` WHERE `id` = $id";
-		$query = mysqli_query($con,$q);
-
-		while($res = mysqli_fetch_array($query)){
-	?>
     <form name="" method="POST" class="timeline">
     <table class="proTable">
         <tr>
             <th><label for="timeline">Timeline</label></th>
         </tr>
         <tr>
-            <th><button onclick="profileBtn();" class="active" type="submit" name="btnPersonalInfo" >Personal Information</button></th>
+            <th><button onclick="profileBtn();" class="active" type="submit" name="btnAccountSet" >Personal Information</button></th>
         </tr>
         <tr>
             <th><button onclick="tutioninfoBtn();" type="submit" name="btnTutionInfo">Tution Information</button></th>
@@ -59,7 +52,14 @@ $id = $_SESSION['id'];
         </tr>
     </table>
     </form>
+    
+    <?php
+	include 'control/connection.php';
+		$q = "SELECT * FROM `user` WHERE `id` = $id";
+		$query = mysqli_query($con,$q);
 
+		while($res = mysqli_fetch_array($query)){
+	?>
     <form  action="control/update.php" method="POST" class="inner" >
 	<table>
         <tr>
