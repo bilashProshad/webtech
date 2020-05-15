@@ -36,7 +36,7 @@ $id = $_SESSION['id'];
     
     </nav>
     
-    <form name="" method="POST" class="timeline">
+    <form name="search_form_results"  action="#" method="#" class="timeline">
     <table class="proTable">
         <tr>
             <th><label for="timeline">Timeline</label></th>
@@ -69,7 +69,7 @@ $id = $_SESSION['id'];
         </tr>
         <tr>
             <th align="center">
-                <img src="placeholder.png" align="center" onclick="triggerClick()" id="ProfileDisplay"> 
+                <img src="placeholder.png" width="150px" height="150px" align="center" onclick="triggerClick()" id="ProfileDisplay"> 
                     <input type="file" name="ProfileImage" onchange="displayImage(this)" id="ProfileImage" style="display:none;" ><br>
             </th>
         </tr>
@@ -122,7 +122,10 @@ $id = $_SESSION['id'];
             </th>
         </tr>
         <tr>            
-            <th align="center"><button type="submit">Update</button></th>
+            <th align="center"><button type="submit" name="submit">Update</button></th>
+        </tr>
+        <tr>
+            <th> <span > <?php if(isset($_SESSION['result'])) { echo $_SESSION['result']; } unset($_SESSION['result']); ?></span> </th>
         </tr>
     </table>
 	</form>
