@@ -134,6 +134,17 @@ body{
    
 }
 
+.timeline{
+    margin: 0 auto;
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+    position: absolute;
+    margin-top: 10em;
+    margin-left: 10%;
+    background-color: #454b50;
+}
+
 label{
     color: white;
 }
@@ -161,7 +172,23 @@ button {
     cursor: pointer;    
 }
 
- button:hover{
+ button:hover, button.active{
+    background: #526677;
+    transition: .2s;
+}
+
+
+.proTable tr th button{
+    background-color:#717980;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 250px;
+}
+
+.proTable tr th button:hover, .proTable tr th button.active{
     background: #526677;
     transition: .2s;
 }
