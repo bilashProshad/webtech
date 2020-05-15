@@ -11,13 +11,18 @@ function displayImage(I){
 	}
 	
 }
-function TutionUpdate(){
-	document.forms['search_form_results'].action='UpdateTutionInfo.php';
+function profileBtn(){
+	document.forms['search_form_results'].action='profile.php';
 	document.forms['search_form_results'].submit();
 	
 }
-function AccountSettings(){
-	document.forms['search_form_results'].action='Accountsetting.php';
+function tutioninfoBtn(){
+	document.forms['search_form_results'].action='tutioninfo.php';
+	document.forms['search_form_results'].submit();
+	
+}
+function acSetBtn(){
+	document.forms['search_form_results'].action='accountSettings.php';
 	document.forms['search_form_results'].submit();
 	
 }
