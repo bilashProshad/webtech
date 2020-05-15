@@ -1,3 +1,8 @@
+<?php
+session_start();
+$id = $_SESSION['id'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,8 +35,15 @@
         </ul>
     
     </nav>
-	
-    <form name="search_form_results"  action="#" method="POST" class="timeline">
+    
+    <?php
+	include 'control/connection.php';
+		$q = "SELECT * FROM `user` WHERE `id` = $id";
+		$query = mysqli_query($con,$q);
+
+		while($res = mysqli_fetch_array($query)){
+	?>
+    <form name="" method="POST" class="timeline">
     <table class="proTable">
         <tr>
             <th><label for="timeline">Timeline</label></th>
@@ -48,7 +60,7 @@
     </table>
     </form>
 
-    <form  action="" method="POST" class="inner" enctype="multipart/form-date">
+    <form  action="control/update.php" method="POST" class="inner" >
 	<table>
         <tr>
             <th>
@@ -63,42 +75,50 @@
         </tr>
         <tr>
             <th>
-                <input type="text" name="Name" id="Name" placeholder="Name">
-                <span id="Name"></span></br> 
+                <input type="text" name="txtName" id="Name" value="<?php echo $res['name']; ?>">
             </th>
         </tr>
         <tr>
             <th>
-                <input type="text" name="txtEmail" id="txtEmail" placeholder="Email">
-                <span id="userMail"></span> </br> 
+                <input type="text" name="txtEmail" id="txtEmail" value="<?php echo $res['email']; ?>">
             </th>
         </tr>
         <tr>
             <th>
-                <input type="Number" name="phone Number" id="phone Number" placeholder="phone Number">
-                <span id="phone Number"></span></br>
+                <input type="text" name="txtPhoneNo" id="phone Number" value="<?php echo $res['contact']; ?>" >
             </th>
         </tr>
         <tr>
             <th align="left">
                 <label for="">Gender : &nbsp;</label>
-                <input type="radio" name="gender" id="" value="male">
+                <?php
+                    if($res['gender'] == "male"){
+                ?>
+                <input type="radio" name="gender" id="" value="male" checked>
                 <label for="">Male</label>
                 <input type="radio" name="gender" id="" value="female">
                 <label for="">Female</label>
-                <span id="checkGender"></span>                
+                <?php
+                    }
+                    else{
+                ?>
+                <input type="radio" name="gender" id="" value="male" >
+                <label for="">Male</label>
+                <input type="radio" name="gender" id="" value="female" checked>
+                <label for="">Female</label>
+                <?php
+                    }
+                ?>
             </th>
         </tr>
         <tr>
             <th>
-                <input type="text" name="Address" id="Address" placeholder="Address">
-                <span id="Address"></span> </br> 
+                <input type="text" name="txtAddress" id="address" placeholder="Enter your address" value="<?php echo $res['address']; ?>">
             </th>
         </tr>
         <tr>
             <th>
-                <input type="text" name="Institution" id="Institution" placeholder="Institution">
-                <span id="Institution"></span> 
+                <input type="text" name="txtInstitution" id="institution" placeholder="Enter your institution" value="<?php echo $res['institution']; ?>">
             </th>
         </tr>
         <tr>            
@@ -106,7 +126,9 @@
         </tr>
     </table>
 	</form>
-    
+    <?php 
+        }
+    ?>
             
 	<script src="js/script.js"> </script>
 </body>

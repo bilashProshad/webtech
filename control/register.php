@@ -27,7 +27,7 @@ if(isset($_POST['done'])){
         $_SESSION['msg'] = "This email is already used";
     }
     else{
-        $q = "INSERT INTO `user`(`name`, `email`, `contact`, `password`, `usertype`, `gender`, `status`, `pending`, `image`) VALUES ('$txtName','$txtEmail','$txtPhoneNo','$txtPassword','$userType','$gender', $status, $pending, null)";
+        $q = "INSERT INTO `user`(`name`, `email`, `contact`, `password`, `usertype`, `gender`, `status`, `pending`, `image`, `address`, `institution`) VALUES ('$txtName','$txtEmail','$txtPhoneNo','$txtPassword','$userType','$gender', $status, $pending, null, null, null)";
         $query = mysqli_query($con,$q);
         if($query){
             $last_id = mysqli_insert_id($con);
