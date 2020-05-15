@@ -10,7 +10,7 @@ session_start();
     <title>Online Tutor Finder</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-<body>
+<body class="outer">
     <div class="header">
         <h1>Online Tutor Finder</h1>
         <h4>Learn Teach Earn</h4>
@@ -28,7 +28,7 @@ session_start();
     
     </nav>
 
-    <form action="control/register.php" onsubmit="return validation()" method="POST" class="registration-form">
+    <form action="control/register.php" onsubmit="return validation()" method="POST"  class="inner">
         <table>
             <tr>
                 <th>

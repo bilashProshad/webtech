@@ -6,6 +6,19 @@
     list-style: none;
     box-sizing: border-box;
 }
+.inner {
+    display: table;
+    margin: 0 auto;
+    margin-top: 5em;
+    background-color: #454b50;
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+  }
+  
+.outer {    
+    width:100%;
+}
 
 nav{
     background: #454b50;
@@ -57,7 +70,7 @@ body{
     padding: 1em;
     border: 1px solid #CCC;
     border-radius: 1em;
-    position: fixed;
+    position: absolute;
     top: 35%;
     left: 50%;
     margin-top: -100px;

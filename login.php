@@ -14,7 +14,7 @@ if(isset($_SESSION['email'])){
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
 </head>
-<body>
+<body class="outer">
     <div class="header">
         <h1>Online Tutor Finder</h1>
         <h4>Learn Teach Earn</h4>
@@ -32,7 +32,7 @@ if(isset($_SESSION['email'])){
     
     </nav>
 
-    <form action="#" onsubmit="return validation()" method="POST" class="login-form">
+    <form action="#" onsubmit="return validation()" method="POST" class="inner" >
         <table>
             <tr>
                 <th>
