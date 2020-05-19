@@ -124,19 +124,19 @@ session_start();
 				<td>
 				<label for="">Salary Range : </label> 
 				<select name="salRangeLow">
-					          <label for=""><option value="One thousand">one thousand</option></label>
-							  <label for=""><option value="Two thousand">two thousand</option></label>
-							 <label for=""> <option value="Three thousand">Three thousand</option></label>
+					          <label for=""><option value="1000">1000</option></label>
+							  <label for=""><option value="2000">2000</option></label>
+							 <label for=""> <option value="3000">3000</option></label>
 							 
 				</select>
 				<?php echo"&nbsp"."<label> To </label>"."&nbsp";?>
 				<select name="salRangeHigh">
-					         <label for=""> <option value="Two thousand">Two thousand</option></label>
-							 <label for=""> <option value="Three thousand">Three thousand</option></label>
-							 <label for=""> <option value="Four thousand">Four thousand</option></label>
-							 <label for=""> <option value="Five thousand">Five thousand</option></label>
-							 <label for=""> <option value="Six thousand">Six thousand</option></label>
-							 <label for=""> <option value="Seven thousand">Seven thousand</option></label>
+					         <label for=""> <option value="2000">2000</option></label>
+							 <label for=""> <option value="3000">3000</option></label>
+							 <label for=""> <option value="4000">4000</option></label>
+							 <label for=""> <option value="5000">5000</option></label>
+							 <label for=""> <option value="6000">6000</option></label>
+							 <label for=""> <option value="7000">7000</option></label>
 							 
 				</select>
 				

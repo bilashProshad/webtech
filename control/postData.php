@@ -5,7 +5,8 @@ include 'connection.php';
 if(isset($_POST['submit'])){
 $userid = $_SESSION['id'];
 $class = $_POST['class'];
-$salRange = $_POST['salRangeLow'] . " to " . $_POST['salRangeHigh'];
+$lowSal = $_POST['salRangeLow'];
+$highSal = $_POST['salRangeHigh'];
 $prefIns = $_POST['prefIns'];
 $prefTime = $_POST['prefTime'];
 $deadLine = $_POST['deadLine'];
@@ -25,7 +26,7 @@ $medium = "";
         }
     }
 
-    $q = "INSERT INTO `post`(`medium`, `subject`, `class`, `location`, `salary`, `institution`, `preftime`, `deadline`, `userIdFk`) VALUES ('$medium','$prefSub','$class','$location','$salRange','$prefIns','$prefTime','$deadLine',$userid)";
+    $q = "INSERT INTO `post`(`medium`, `subject`, `class`, `location`, `lowSal`, `highSal` , `institution`, `preftime`, `deadline`, `userIdFk`) VALUES ('$medium','$prefSub','$class','$location', $lowSal, $highSal,'$prefIns','$prefTime','$deadLine',$userid)";
     $query = mysqli_query($con,$q);
     if($query){
         $_SESSION['result'] = "Post Successfull";
