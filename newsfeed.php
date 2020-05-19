@@ -74,7 +74,7 @@
 				
 				</th>
 				<th align="left">: &nbsp; &nbsp;</th>
-				<th align="left"><?php echo $res['salary'] ?></th>
+				<th align="left"><?php echo $res['lowSal'] ." To ". $res['highSal']; ?></th>
 			</tr>
 			<tr>
 			<th align="left"> Location 		
