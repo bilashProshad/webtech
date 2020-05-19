@@ -36,6 +36,13 @@ $id = $_SESSION['id'];
     
     </nav>
     
+    <?php
+	include 'control/connection.php';
+		$q = "SELECT * FROM `user` WHERE `id` = $id";
+		$query = mysqli_query($con,$q);
+
+		while($res = mysqli_fetch_array($query)){
+	?>
     <form name="search_form_results"  action="#" method="#" class="timeline">
     <table class="proTable">
         <tr>
@@ -44,22 +51,21 @@ $id = $_SESSION['id'];
         <tr>
             <th><button onclick="profileBtn();" class="active" type="submit" name="btnAccountSet" >Personal Information</button></th>
         </tr>
+        <?php
+            if($res['status'] == 2){
+        ?>
         <tr>
             <th><button onclick="tutioninfoBtn();" type="submit" name="btnTutionInfo">Tution Information</button></th>
         </tr>
+        <?php
+            }
+        ?>
         <tr>
             <th><button onclick="acSetBtn();" type="submit" name="btnAccountSet">Account Settings</button></th>
         </tr>
     </table>
     </form>
     
-    <?php
-	include 'control/connection.php';
-		$q = "SELECT * FROM `user` WHERE `id` = $id";
-		$query = mysqli_query($con,$q);
-
-		while($res = mysqli_fetch_array($query)){
-	?>
     <form  action="control/update.php" method="POST" class="inner" >
 	<table>
         <tr>
