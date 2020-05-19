@@ -66,17 +66,25 @@ $id = $_SESSION['id'];
     </table>
     </form>
     
-    <form  action="control/update.php" method="POST" class="inner" >
+    <form style="width: 380px" action="control/update.php" method="POST" class="inner" enctype="multipart/form-data">
 	<table>
         <tr>
             <th>
                 <h1 style="margin-bottom: 10px"><label for="">User Profile</label></h1>
             </th>
         </tr>
+    </table>
+    <table>
         <tr>
             <th align="center">
-                <img src="placeholder.png" width="150px" height="150px" align="center" onclick="triggerClick()" id="ProfileDisplay"> 
-                    <input type="file" name="ProfileImage" onchange="displayImage(this)" id="ProfileImage" style="display:none;" ><br>
+                    <img style="border-radius: 50%;" src="<?php echo $res['image']; ?>" width="150px" height="150px" align="center" id="ProfileDisplay">                 
+            </th>
+        </tr>
+    </table>
+    <table> 
+        <tr>
+            <th align="right">
+                <input type="file" name="photo" id="">
             </th>
         </tr>
         <tr>
@@ -133,7 +141,7 @@ $id = $_SESSION['id'];
         <tr>
             <th> <span > <?php if(isset($_SESSION['result'])) { echo $_SESSION['result']; } unset($_SESSION['result']); ?></span> </th>
         </tr>
-    </table>
+    </>
 	</form>
     <?php 
         }
