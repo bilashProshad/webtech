@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,7 +52,7 @@
     </table>
     </form>
 
-    <form  action="" method="POST" class="inner">
+    <form  action="control/updatepass.php" method="POST" class="inner">
 	     <table>
             <tr>
                 <th>
@@ -61,20 +65,17 @@
 				<table>
 			 <tr>
                 <th>
-                    <input type="password" name="old_password" id="old_password" placeholder="Enter Old Password"><br>
-                    <span id="old_password"></span>            
+                    <input type="password" name="oldPass" id="old_password" placeholder="Enter Old Password" required><br>
                 </th>
             </tr>
 				<tr>
 					<th>
-                    <input type="password" name="new_Password" id="new_Password" placeholder="Enter New Password"><br>
-                    <span id="new_Password"></span>
+                    <input type="password" name="newPass" id="new_Password" placeholder="Enter New Password" required><br>
 						</th>
 				</tr>
 				<tr>
 					<th>
-                    <input type="password" name="con_Password" id="con_Password" placeholder="Confirm your Password"><br>
-                    <span id="con_Password"></span>
+                    <input type="password" name="conPass" id="con_Password" placeholder="Confirm your Password" required><br>
 						</th>
 				</tr>
 					</table>
@@ -82,7 +83,12 @@
 					<table>
 				<tr>	
 				
-                <th align="right"><button type="submit" name="Update" >Update</button></th>
+                <th>
+                    <button type="submit" name="submit" >Update</button>
+                    <br>
+                    <span><?php if(isset($_SESSION['msg'])){ echo $_SESSION['msg']; unset($_SESSION['msg']); }
+                    ?></span>
+                </th>
             </tr>
         </table>
 	
