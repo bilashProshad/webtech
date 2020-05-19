@@ -6,7 +6,7 @@
     <title>Online Tutor Finder</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-<body>
+<body class="outer">
     <div class="header">
         <h1>Online Tutor Finder</h1>
         <h4>Learn Teach Earn</h4>
@@ -29,7 +29,7 @@
         </ul>
     
     </nav>
-	<form  action="SearchResult.php" method="POST" class="All-form">
+	<form  action="SearchResult.php" method="POST" class="inner">
 	     <table>
             <tr>
                 <th>
@@ -42,7 +42,7 @@
 				<tr>
 				<th align="left">
 					<label for="">Subject :</label>
-					<select>
+					<select name="subject">
 					<label for="">  <option  value="Bangla"> Bangla </option></label>
 					<label for="">  <option value="English"> English </option></label>
 					<label for="">  <option value="Math"> Math </option></label>
@@ -61,7 +61,7 @@
 					  </select>
 					  
 						<label for="">Class:</label>
-						<select>
+						<select name="class">
 						  <label for=""><option value="One">One</option></label>
 						  <label for=""><option value="Two">Two</option></label>
 						  <label for=""><option value="Three">Three</option></label>
@@ -77,7 +77,7 @@
 						    </select>
 						
 						<label for="">Medium :</label>
-						<select>
+						<select name="medium">
 					 <label for=""> <option value="Bangla"> Bangla </option></label>
 					 <label for=""> <option value="English"> English </option></label>
 					 <label for=""> <option value="Others"> Others </option></label>
@@ -92,10 +92,25 @@
 				<tr>
 				
                 <th align="left">
-				<label for="">Salary :</label>
-                    <input type="Number" name="Salary" id="Salary" placeholder="Salary " autocomplete="off" ><br>
-					
-                       </th>
+				<label for="">Salary Range : </label> 
+				<select name="salRangeLow">
+					          <label for=""><option value="1000">1000</option></label>
+							  <label for=""><option value="2000">2000</option></label>
+							 <label for=""> <option value="3000">3000</option></label>
+							 
+				</select>
+				<?php echo"&nbsp"."<label> To </label>"."&nbsp";?>
+				<select name="salRangeHigh">
+					         <label for=""> <option value="2000">2000</option></label>
+							 <label for=""> <option value="3000">3000</option></label>
+							 <label for=""> <option value="4000">4000</option></label>
+							 <label for=""> <option value="5000">5000</option></label>
+							 <label for=""> <option value="6000">6000</option></label>
+							 <label for=""> <option value="7000">7000</option></label>
+							 
+				</select>
+ 			
+                </th>
             </tr>
 			</table>
 					<br>
@@ -103,7 +118,7 @@
 			<tr>
 			<th align="left">
 			   <label for="">Location:</label>
-						  <select>
+						  <select name="location">
 						 <label for=""> <option value="Badda">Badda</option></label>
 						 <label for=""> <option value="Nikunjo">Nikunjo</option></label>
 						 <label for=""> <option value="Basabo">Basabo</option></label>
@@ -121,7 +136,7 @@
 				<tr>
 				<th align="left">
 				<label for="">Preferred Institution:</label>
-				<select>
+				<select name="institution">
 							<label for=""><option value="Buet">Buet</option></label>
 					         <label for=""> <option value="Aiub">Aiub</option></label>
 							  <label for=""><option value="NSU">NSU</option></label>
@@ -138,7 +153,7 @@
 					<table>
 				<tr>	
 				
-                <th align="right"><button type="submit" name="Search" >Search</button></th>
+                <th align="right"><button type="submit" name="submit" >Search</button></th>
             </tr>
         </table>
 	
