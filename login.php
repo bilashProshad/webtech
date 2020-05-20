@@ -1,7 +1,12 @@
 <?php
 include 'control/loginCheck.php';
 if(isset($_SESSION['email'])){
-    header("location: newsfeed.php");
+    if($_SESSION['status']==0){
+        header("location: dashboard.php");
+    }
+    else{
+        header("location: newsfeed.php");
+    }
 }
 ?>
 

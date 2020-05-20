@@ -70,7 +70,7 @@ $id = $_SESSION['id'];
 	<table>
         <tr>
             <th>
-                <h1 style="margin-bottom: 10px"><label for="">User Profile</label></h1>
+                <h1 style="margin-bottom: 10px;"><label for="">User Profile</label></h1>
             </th>
         </tr>
     </table>
