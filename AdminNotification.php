@@ -16,15 +16,15 @@
     
         <ul>
             <li><a  href="Dashboard.php"><img align="center" src="image/home.png"></a></li>
-            <li><a class="active" href="Dashboard.php">Dashboard</a></li>
+            <li><a href="Dashboard.php">Dashboard</a></li>
              <li><a href="RegistrationReview.php">Registration Review</a></li>
             <li><a href="UpdateSystemInfo.php">Update Information</a></li>
             
         </ul>
 
         <ul class="r">
-            <li><a href="AdminNotification.php">Notification</a></li>
-           <li><a href="AdminProfile.php">Admin</a></li>
+            <li><a class="active" href="AdminNotification.php">Notification</a></li>
+           <li><a href="profile.php">Admin</a></li>
             <li><a href="index.php">Logout</a></li>
         </ul>
     

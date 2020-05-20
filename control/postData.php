@@ -13,6 +13,8 @@ $deadLine = $_POST['deadLine'];
 $location = $_POST['location'];
 $prefSub = "";
 $medium = "";
+$name = "";
+$status = "";
 
     if(!empty($_POST['prefSub'])) {
         foreach($_POST['prefSub'] as $check) {
@@ -26,7 +28,15 @@ $medium = "";
         }
     }
 
-    $q = "INSERT INTO `post`(`medium`, `subject`, `class`, `location`, `lowSal`, `highSal` , `institution`, `preftime`, `deadline`, `userIdFk`) VALUES ('$medium','$prefSub','$class','$location', $lowSal, $highSal,'$prefIns','$prefTime','$deadLine',$userid)";
+    $q = "SELECT `name`, `status` FROM `user` WHERE `id`=$userid";
+	$query = mysqli_query($con,$q);
+
+	while($res = mysqli_fetch_array($query)){
+        $name = $res['name'];
+        $status = $res['status'];
+    }
+
+    $q = "INSERT INTO `post`(`medium`, `subject`, `class`, `location`, `lowSal`, `highSal` , `institution`, `preftime`, `deadline`, `userIdFk`, `name`, `status`) VALUES ('$medium','$prefSub','$class','$location', $lowSal, $highSal,'$prefIns','$prefTime','$deadLine',$userid, '$name', $status)";
     $query = mysqli_query($con,$q);
     if($query){
         $_SESSION['result'] = "Post Successfull";

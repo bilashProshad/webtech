@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,20 +40,40 @@
 		$query = mysqli_query($con,$q);
 
 		while($res = mysqli_fetch_array($query)){
+			if($_SESSION['status'] == $res['status']){
+				continue;
+			}
+			else{
 	?>
 
 	<form  action="#" method="POST" class="newsfeed-form">
 	     <table>
             <tr>
-                <th
-                    align="left" style="margin: 10px;font-size:150%"><label for="">Student</label>
-					
+				<?php
+					if($res['status']==1){
+				?>
+				<th	align="left" style="margin: 10px;font-size:150%"><label for="">Student</label>					
                 </th>
+				<?php
+					}
+					else if($res['status']==2){
+				?>
+					<th					
+                    align="left" style="margin: 10px;font-size:150%"><label for="">Teacher</label>					
+                </th>
+				<?php
+					}
+				?>
             </tr>
             <tr>
 			</table>
 			</br>
 			<table>
+			<tr>
+			<th align="left"> Name </th>
+			<th align="left">: &nbsp; &nbsp</th>
+			<th align="left"><?php echo $res['name'] ?></th>
+			</tr>
 			<tr>
 			<th align="left"> Subject </th>
 			<th align="left">: &nbsp; &nbsp</th>
@@ -102,11 +125,12 @@
                 <th align="left"><button > <a style="color:white;" href="delete.php?id=<?php echo $res['id']; ?>" > Apply Now </a> </button></th>
             </tr>
 			
-			</table>
+		</table>
 	</form>
 		
 
 	<?php
+			}
 		}
 	?>
 
