@@ -19,7 +19,27 @@ $id = $_SESSION['id'];
     </div>
 
     <nav>        
-    
+        <?php
+            if($_SESSION['status']==0){
+        ?>
+            <ul>
+            <li><a  href="Dashboard.php"><img align="center" src="image/home.png"></a></li>
+            <li><a href="Dashboard.php">Dashboard</a></li>
+             <li><a href="RegistrationReview.php">Registration Review</a></li>
+            <li><a href="UpdateSystemInfo.php">Update Information</a></li>
+            
+        </ul>
+
+        <ul class="r">
+            <li><a href="AdminNotification.php">Notification</a></li>
+           <li><a class="active" href="profile.php">Admin</a></li>
+            <li><a href="logout.php">Logout</a></li>
+        </ul>
+            
+        <?php
+            } 
+            else{
+        ?>
         <ul>
             <li><a  href="newsfeed.php"><img align="center" src="image/home.png"></a></li>
             <li><a href="newsfeed.php">News Feed</a></li>
@@ -33,7 +53,9 @@ $id = $_SESSION['id'];
             <li><a class="active" href="profile.php">Profile</a></li>
             <li><a href="logout.php">Logout</a></li>
         </ul>
-    
+        <?php
+            }
+        ?>
     </nav>
     
     <?php
@@ -76,9 +98,20 @@ $id = $_SESSION['id'];
     </table>
     <table>
         <tr>
-            <th align="center">
-                    <img style="border-radius: 50%;" src="<?php echo $res['image']; ?>" width="150px" height="150px" align="center" id="ProfileDisplay">                 
-            </th>
+            <th >
+                    <?php
+                        if(isset($res['image'])){
+                    ?>
+                    <img align="center" style="border-radius: 50%;" src="<?php echo $res['image']; ?>" width="150px" height="150px" align="center" id="ProfileDisplay">                 
+                    <?php
+                        }
+                        else{
+                    ?>
+                    <img align="right" style="border-radius: 50%;" src="placeholder.png" width="150px" height="150px" align="center" id="ProfileDisplay">
+                    <?php
+                        }
+                    ?>
+                </th>
         </tr>
     </table>
     <table> 

@@ -30,17 +30,25 @@
         </ul>
     
     </nav>
-	<form  action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST" class="All-form">
+	
+	<?php
+	include 'control/connection.php';
+		$q = "select * from post";
+		$query = mysqli_query($con,$q);
+
+		while($res = mysqli_fetch_array($query)){
+	?>
+	
+	<form  action="#" method="POST" class="newsfeed-form">
 	     <table>
-		 <tr>
+		 	<tr>
                 <th>
                     <h1 style="margin-bottom: 30px "><label for="">Admin Dashboard</label></h1>
                 </th>
             </tr>
-            <tr>
+		 	<tr>
                 <th
-                    align="left" style="margin: 5px;font-size:130%"><label for="">Student</label>
-					
+                    align="left" style="margin: 5px;font-size:130%"><label for="">Student</label>		
                 </th>
             </tr>
             <tr>
@@ -48,51 +56,62 @@
 			</br>
 			<table>
 			<tr>
-			<th align="left"> Subject :
-			
-				</th>
+			<th align="left"> Subject </th>
+			<th align="left">: &nbsp; &nbsp</th>
+			<th align="left"><?php echo $res['subject'] ?></th>
 			</tr>
 			 <tr>
-			<th align="left"> Class  &nbsp &nbsp :
+			<th align="left"> Class 
 					
-                </th>
-			</tr>
-			<tr>
-			<th align="left"> Medium :
 				</th>
+				<th align="left">: &nbsp; &nbsp;</th>
+				<th align="left"> <?php echo $res['class'] ?> </th>
 			</tr>
 			<tr>
-			<th align="left"> Salary  &nbsp :
+			<th align="left"> Medium 
+				</th>
+				<th align="left">: &nbsp; &nbsp;</th>
+				<th align="left"><?php echo $res['medium'] ?></th>
+			</tr>
+			<tr>
+			<th align="left"> Salary 
 				
-                </th>
+				</th>
+				<th align="left">: &nbsp; &nbsp;</th>
+				<th align="left"><?php echo $res['lowSal'] ." To ". $res['highSal']; ?></th>
 			</tr>
 			<tr>
-			<th align="left"> Location :
-			
+			<th align="left"> Location 		
 				</th>
+				<th align="left">: &nbsp; &nbsp;</th>
+				<th align="left"><?php echo $res['location'] ?></th>
 			</tr>
 			<tr>
-			<th align="left"> Preferred Institution :
-			
+			<th align="left"> Preferred Institution &nbsp;			
 				</th>
+				<th align="left">: &nbsp; &nbsp;</th>
+				<th align="left"><?php echo $res['institution'] ?></th>
 			</tr>
 				<tr>
-			<th align="left"> Deadline :
-			
+			<th align="left"> Deadline 			
 				</th>
+				<th align="left">: &nbsp; &nbsp;</th>
+				<th align="left"><?php echo $res['deadline'] ?></th>
 			</tr>
 			</table>
 			</br>
 			<table>
+	
 			 <tr>
-                <td><th align="right" ><button type="submit" name="Details" >Details</button></th></td>
-               <td> <th align="right"><button type="submit" name="Hide" >Hide</button></th></td>
-                <td><th align="right"><button type="submit" name="Delete" >Delete</button></th></td>
+                <th align="left"><button > <a style="color:white;" href="delete.php?id=<?php echo $res['id']; ?>" > Apply Now </a> </button></th>
             </tr>
 			
 			</table>
-			</form>
+	</form>
 
+    <?php
+		}
+	?>
     
 
 </body>
