@@ -96,14 +96,23 @@ $query = mysqli_query($con,$q);
             <td>
                 <table>
                     <tr>
+                    <?php
+	                    include 'control/connection.php';
+		                $q = "SELECT * FROM `systeminfo`";
+                        $query = mysqli_query($con,$q);
+                        while($res = mysqli_fetch_array($query)){
+                    ?>
                         <td align="center">
                             <form action="" class="index-form-contract">
                                 <h1>Contract Us:</h1>
-                                <h3>Hotline: 01788228533</h3>
+                                <h3>Hotline: <?php echo $res['contract'] ?></h3>
                                 <p>E-mail us at-</p>
-                                <p>onlinetutioncare@example.com</p>
+                                <p><?php echo $res['email'] ?></p>
                             </form>
                         </td>
+                        <?php
+                        }
+                        ?>
                     </tr>
                     <tr>
                         <td align="center">
