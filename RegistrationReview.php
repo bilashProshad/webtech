@@ -25,7 +25,6 @@
         </ul>
 
         <ul class="r">
-            <li><a href="AdminNotification.php">Notification</a></li>
             <li><a href="Profile.php">Admin</a></li>
             <li><a href="index.php">Logout</a></li>
         </ul>

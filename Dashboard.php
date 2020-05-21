@@ -24,7 +24,6 @@
         </ul>
 
         <ul class="r">
-            <li><a href="AdminNotification.php">Notification</a></li>
            <li><a href="profile.php">Admin</a></li>
             <li><a href="logout.php">Logout</a></li>
         </ul>
@@ -50,14 +49,31 @@
                 </th>
             </tr>
 		 	<tr>
-                <th
-                    align="left" style="margin: 5px;font-size:130%"><label for="">Student</label>		
+			 <?php
+					if($res['status']==1){
+				?>
+				<th	align="left" style="margin: 10px;font-size:150%"><label for="">Student</label>					
                 </th>
+				<?php
+					}
+					else if($res['status']==2){
+				?>
+					<th					
+                    align="left" style="margin: 10px;font-size:150%"><label for="">Teacher</label>					
+                </th>
+				<?php
+					}
+				?>
             </tr>
             <tr>
 			</table>
 			</br>
 			<table>
+			<tr>
+			<th align="left"> Name </th>
+			<th align="left">: &nbsp; &nbsp</th>
+			<th align="left"><?php echo $res['name'] ?></th>
+			</tr>
 			<tr>
 			<th align="left"> Subject </th>
 			<th align="left">: &nbsp; &nbsp</th>
@@ -108,7 +124,6 @@
 			 <tr>
 			 <tr>
                 <td><th align="left"><button > <a style="color:white;" href="details.php?id=<?php echo $res['userIdFk']; ?>" > Details </a> </button></th></td>
-                <td> <th align="left"><button > <a style="color:white;" href="na.php?id=<?php echo $res['id']; ?>" > Hide </a> </button></th></td> 
                 <td><th align="left"><button > <a style="color:white;" href="control/delete.php?id=<?php echo $res['id']; ?>" > Delete </a> </button></th></td>
             </tr>
             </tr>
