@@ -122,7 +122,7 @@ session_start();
 			<table>
 	
 			 <tr>
-                <th align="left"><button > <a style="color:white;" href="delete.php?id=<?php echo $res['id']; ?>" > Apply Now </a> </button></th>
+                <th align="left"><button > <a style="color:white;" href="control/apply.php?id=<?php echo $res['id']; ?>" > Apply Now </a> </button></th>
             </tr>
 			
 		</table>
