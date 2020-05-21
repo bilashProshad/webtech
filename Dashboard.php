@@ -36,7 +36,7 @@
 	
 	<?php
 	include 'control/connection.php';
-		$q = "select * from post";
+		$q = "SELECT * FROM `post` ORDER BY `id` DESC";
 		$query = mysqli_query($con,$q);
 
 		while($res = mysqli_fetch_array($query)){

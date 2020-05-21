@@ -1,5 +1,19 @@
 <?php
 session_start();
+if(isset($_SESSION['apply'])){
+	if($_SESSION['apply'] == "success"){
+?>
+<script>alert("You have sent request successfully")</script>
+<?php
+unset($_SESSION['apply']);
+	}
+	else if($_SESSION['apply'] == "duplicate"){
+?>
+<script>alert("You have already sent a request")</script>
+<?php
+unset($_SESSION['apply']);
+	}
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +50,7 @@ session_start();
 	
 	<?php
 	include 'control/connection.php';
-		$q = "select * from post";
+		$q = "SELECT * FROM `post` ORDER BY `id` DESC";
 		$query = mysqli_query($con,$q);
 
 		while($res = mysqli_fetch_array($query)){

@@ -35,7 +35,7 @@
     
     </nav>
     
-	<form  action="" method="POST" class="All-form">
+	<form  action="" method="POST" class="inner">
 	     <table>
             <tr>
                 <th>
