@@ -108,7 +108,7 @@
 			 <tr>
 			 <tr>
                 <td><th align="left"><button > <a style="color:white;" href="details.php?id=<?php echo $res['userIdFk']; ?>" > Details </a> </button></th></td>
-                <td> <th align="left"><button > <a style="color:white;" href="delete.php?id=<?php echo $res['id']; ?>" > Hide </a> </button></th></td> 
+                <td> <th align="left"><button > <a style="color:white;" href="na.php?id=<?php echo $res['id']; ?>" > Hide </a> </button></th></td> 
                 <td><th align="left"><button > <a style="color:white;" href="control/delete.php?id=<?php echo $res['id']; ?>" > Delete </a> </button></th></td>
             </tr>
             </tr>
