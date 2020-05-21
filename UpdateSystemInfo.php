@@ -76,9 +76,7 @@ else{
 			 <tr>
 			 <label for="">Update Website description :</label>
 					<th>
-				<textarea rows="4" cols="50" name="txtarea">
-                <?php echo $res['description']; ?>
-                </textarea>
+				<textarea rows="4" cols="50" name="txtarea"><?php echo $res['description']; ?></textarea>
 				</th>
 				<td>
 				<th align="right"><button type="submit" name="update" >Update</button></th>
