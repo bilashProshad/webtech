@@ -1,3 +1,11 @@
+<?php
+include 'control/connection.php';
+$date = date("Y-m-d");
+echo $date;
+$q = "DELETE FROM `post` WHERE `deadline` <= '$date'";
+$query = mysqli_query($con,$q);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
