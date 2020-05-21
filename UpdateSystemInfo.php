@@ -1,3 +1,26 @@
+<?php
+if(isset($_POST['update'])){
+$contact = $_POST['txtPhoneNo'];
+$email = $_POST['txtEmail'];
+$description = $_POST['txtarea'];
+
+include 'control/connection.php';
+$q = "UPDATE `systeminfo` SET `contract`='$contact',`email`='$email',`description`='$description' WHERE `id` = 1";
+$query = mysqli_query($con,$q);
+
+if($query){
+?>
+<script>alert("Information Updated")</script>
+<?php
+}
+else{
+?>
+<script>alert("Update Failed")</script>
+<?php
+}
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,14 +51,18 @@
         </ul>
 
         <ul class="r">
-            <li><a href="AdminNotification.php">Notification</a></li>
            <li><a href="profile.php">Admin</a></li>
             <li><a href="index.php">Logout</a></li>
         </ul>
     
     </nav>
-    
-	<form  action="" method="POST" class="inner">
+    <?php
+            include 'control/connection.php';
+            $q = "SELECT * FROM `systeminfo`";
+            $query = mysqli_query($con,$q);
+            while($res = mysqli_fetch_array($query)){
+        ?>
+	<form  action="UpdateSystemInfo.php" method="POST" class="inner">
 	     <table>
             <tr>
                 <th>
@@ -49,10 +76,12 @@
 			 <tr>
 			 <label for="">Update Website description :</label>
 					<th>
-				<textarea rows="4" cols="50"></textarea>
+				<textarea rows="4" cols="50" name="txtarea">
+                <?php echo $res['description']; ?>
+                </textarea>
 				</th>
 				<td>
-				<th align="right"><button type="submit" name="Update" >Update</button></th>
+				<th align="right"><button type="submit" name="update" >Update</button></th>
 				</td>
             </tr>
 			</table>
@@ -60,12 +89,12 @@
             <tr>
 			 <label for="">Update Support Contact :</label>
                <th>
-                    <input type="text" name="txtPhoneNo" id="txtPhoneNo" placeholder="" autocomplete="off"><br>
+                    <input type="text" name="txtPhoneNo" id="txtPhoneNo" value="<?php echo $res['contract']; ?>" autocomplete="off"><br>
                     <span id="userPhone"></span>
                 </th>
 				
 				<td>
-				<th align="right"><button type="submit" name="Update" >Update</button></th>
+				<th align="right"><button type="submit" name="update" >Update</button></th>
 					</td>
 				</tr>
 				</table>
@@ -73,18 +102,20 @@
 				   <tr>
 				   <label for="">Update Support Email :</label>
                 <th>
-                    <input type="text" name="txtEmail" id="txtEmail" placeholder="" autocomplete="off"><br>
+                    <input type="text" name="txtEmail" id="txtEmail" value="<?php echo $res['email']; ?>" autocomplete="off"><br>
                     <span id="userMail"></span>            
                 </th>
 				<td>
-                <th align="right"><button type="submit" name="Update" >Update</button></th>
+                <th align="right"><button type="submit" name="update" >Update</button></th>
 				</td>
             </tr>
         </table>
 	
         </form>
         
-        
+        <?php
+            }
+        ?>
     
         
 </body>
