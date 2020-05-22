@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 21, 2020 at 10:09 AM
+-- Generation Time: May 22, 2020 at 03:19 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.1
 
@@ -47,7 +47,31 @@ INSERT INTO `login` (`id`, `email`, `password`, `userfk`) VALUES
 (9, 'moli@test.com', '123456', 15),
 (11, 'p@test.com', '123456', 17),
 (12, 'jj@test.com', '123456', 18),
-(14, 'pbilash64@gmail.com', '123456', 20);
+(14, 'pbilash64@gmail.com', '123456', 20),
+(15, 'sample@test.com', '123456', 21);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `notification`
+--
+
+CREATE TABLE `notification` (
+  `nid` int(10) NOT NULL,
+  `postId` int(10) NOT NULL,
+  `userId` int(10) NOT NULL,
+  `reqId` int(10) NOT NULL,
+  `approve` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `notification`
+--
+
+INSERT INTO `notification` (`nid`, `postId`, `userId`, `reqId`, `approve`) VALUES
+(1, 6, 10, 17, 1),
+(3, 7, 17, 10, 1),
+(5, 5, 10, 17, 2);
 
 -- --------------------------------------------------------
 
@@ -58,9 +82,9 @@ INSERT INTO `login` (`id`, `email`, `password`, `userfk`) VALUES
 CREATE TABLE `post` (
   `id` int(11) NOT NULL,
   `medium` varchar(100) NOT NULL,
-  `subject` varchar(100) NOT NULL,
+  `subject` varchar(255) NOT NULL,
   `class` varchar(100) NOT NULL,
-  `location` varchar(150) NOT NULL,
+  `location` varchar(255) NOT NULL,
   `lowSal` int(100) NOT NULL,
   `highSal` int(100) NOT NULL,
   `institution` varchar(150) NOT NULL,
@@ -69,18 +93,18 @@ CREATE TABLE `post` (
   `userIdFk` int(10) NOT NULL,
   `name` varchar(50) NOT NULL,
   `status` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `post`
 --
 
 INSERT INTO `post` (`id`, `medium`, `subject`, `class`, `location`, `lowSal`, `highSal`, `institution`, `preftime`, `deadline`, `userIdFk`, `name`, `status`) VALUES
-(5, 'English, ', 'Math, ', 'One', 'Nikunjo', 3000, 7000, 'Aiub', '13:27', '2020-05-30', 9, 'test', '1'),
-(6, 'Bangla, ', 'Physic, ', 'One', 'Badda', 1000, 2000, 'Buet', '03:29', '2020-05-21', 17, 'Pri', '2'),
-(7, 'English, ', 'Chemistry, ', 'Twelve', 'Nikunjo', 3000, 7000, 'Buet', '17:30', '2020-06-01', 9, 'test', '1'),
-(8, 'Bangla, ', 'Math, ', 'Ten', 'Gulshan', 2000, 5000, 'Aiub', '16:00', '2020-05-30', 18, 'joye', '1'),
-(9, 'English, ', 'English, ', 'Eight', 'Badda', 2000, 3000, 'Buet', '18:00', '2020-05-30', 18, 'joye', '1');
+(3, 'Bangla, ', 'Physic, ', 'Eleven', 'Nikunjo', 2000, 3000, 'Any', '15:30', '2020-05-31', 9, 'test', '1'),
+(4, 'English, ', 'English, ', 'One', 'Nikunjo', 2000, 4000, 'Any', '15:30', '2020-06-01', 9, 'test', '1'),
+(5, 'Bangla, ', 'Biology, ', 'Nine', 'Badda', 1000, 2000, 'Any', '16:30', '2020-06-05', 10, 'joyee', '1'),
+(6, 'English, ', 'Physic, ', 'Ten', 'Badda', 3000, 5000, 'Any', '15:33', '2020-06-05', 10, 'joyee', '1'),
+(7, 'English, ', 'Math, ', 'One', 'Badda', 1000, 2000, 'Buet', '19:48', '2020-06-05', 17, 'Pri', '2');
 
 -- --------------------------------------------------------
 
@@ -89,11 +113,18 @@ INSERT INTO `post` (`id`, `medium`, `subject`, `class`, `location`, `lowSal`, `h
 --
 
 CREATE TABLE `systeminfo` (
-  `id` int(200) NOT NULL,
-  `supportcontact` varchar(200) NOT NULL,
-  `supportemail` varchar(200) NOT NULL,
+  `id` int(10) NOT NULL,
+  `contract` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
   `description` varchar(500) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `systeminfo`
+--
+
+INSERT INTO `systeminfo` (`id`, `contract`, `email`, `description`) VALUES
+(1, '01788228533', 'pbilash64@gmail.com', 'Online Tutor Finder is Bangladesh\'s first-ever free online platform for tutors & students. It helps\r\nstudent/parents to find verified & skilled tutor in-person & online in many different categories\r\nsince 2020.');
 
 -- --------------------------------------------------------
 
@@ -129,7 +160,8 @@ INSERT INTO `user` (`id`, `name`, `email`, `contact`, `password`, `usertype`, `g
 (17, 'Pri', 'p@test.com', '01788228533', '123456', 'teacher', 'male', 2, 0, NULL, NULL, NULL),
 (18, 'joye', 'jj@test.com', '01456872354', '123456', 'student', 'female', 1, 0, NULL, 'Dinajpur', 'RUET'),
 (19, 'Reg', 'r@test.com', '01788228533', '123456', 'student', 'male', 1, 0, NULL, NULL, NULL),
-(20, 'Bilash', 'pbilash64@gmail.com', '01788228533', '123456', 'admin', 'male', 0, 0, NULL, 'Dinajpur', 'AIUB');
+(20, 'Bilash', 'pbilash64@gmail.com', '01788228533', '123456', 'admin', 'male', 0, 0, NULL, 'Dinajpur', 'AIUB'),
+(21, 'sample', 'sample@test.com', '01423547896', '123456', 'teacher', 'male', 2, 0, NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -143,11 +175,22 @@ ALTER TABLE `login`
   ADD KEY `userfk` (`userfk`);
 
 --
+-- Indexes for table `notification`
+--
+ALTER TABLE `notification`
+  ADD PRIMARY KEY (`nid`);
+
+--
 -- Indexes for table `post`
 --
 ALTER TABLE `post`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `userIdFk` (`userIdFk`);
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `systeminfo`
+--
+ALTER TABLE `systeminfo`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `user`
@@ -163,19 +206,31 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `notification`
+--
+ALTER TABLE `notification`
+  MODIFY `nid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `systeminfo`
+--
+ALTER TABLE `systeminfo`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- Constraints for dumped tables
